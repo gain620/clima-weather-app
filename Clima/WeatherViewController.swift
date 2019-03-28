@@ -16,6 +16,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     //Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
     let APP_ID = valueForAPIKey(named: "WEATHER_API_KEY")
+
     
     // Location Manager
     let locationManager = CLLocationManager()
@@ -32,6 +33,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
+        print(APP_ID)
     }
     
     func getWeatherData(url: String, parameters: [String : String]) {
@@ -52,6 +54,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     //MARK: - JSON Parsing
     func updateWeatherData(json : JSON) {
         if let tempResult = json["main"]["temp"].double {
+            // initially set temperature to celsius degree
             weatherDataModel.temperature = Int(tempResult - 273.15)
             
             weatherDataModel.city = json["name"].stringValue
@@ -92,7 +95,10 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
         }
     }
     
-    
+    // TOGGLE celsius to fahrenheit
+    func toggleTemperatue() {
+        
+    }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)

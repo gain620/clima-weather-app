@@ -9,8 +9,13 @@
 import Foundation
 
 func valueForAPIKey(named keyName : String) -> String {
-    let filePath = Bundle.main.path(forResource: "Keys", ofType: "plist")
-    let plist = NSDictionary(contentsOfFile: filePath!)
-    let value = plist?.object(forKey: keyName) as! String
+    guard let filePath = Bundle.main.path(forResource: "Keys", ofType: "plist") else {
+        return "NO MATCHING FILE FOUND!!!"
+    }
+    guard let plist = NSDictionary(contentsOfFile: filePath) else {
+        return "FILE READ ERROR"
+    }
+    
+    let value = plist.object(forKey: keyName) as! String
     return value
 }
