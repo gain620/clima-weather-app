@@ -15,7 +15,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     
     //Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "9f94f824b279225bb2695495102c57c9"
+    let APP_ID = valueForAPIKey(named: "WEATHER_API_KEY")
     
     // Location Manager
     let locationManager = CLLocationManager()
@@ -32,7 +32,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        
     }
     
     func getWeatherData(url: String, parameters: [String : String]) {
