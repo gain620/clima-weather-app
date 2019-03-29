@@ -10,4 +10,9 @@ target 'Clima' do
     pod 'Alamofire'
     pod 'SVProgressHUD'
 
+  # Pods for Admob
+
+    pod 'Firebase/Core'
+    pod 'Firebase/AdMob'
+
 end

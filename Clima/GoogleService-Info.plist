@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>616707501280-dc4dj4ef586en4sgn3tu425bkagd1lec.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.616707501280-dc4dj4ef586en4sgn3tu425bkagd1lec</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA37mAu3CXPdVwQtaAtP5xNStIYxpcKm8w</string>
+	<key>GCM_SENDER_ID</key>
+	<string>616707501280</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gain620.Clima</string>
+	<key>PROJECT_ID</key>
+	<string>clima-ios-weather-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>clima-ios-weather-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:616707501280:ios:72a31452dd044594</string>
+	<key>DATABASE_URL</key>
+	<string>https://clima-ios-weather-app.firebaseio.com</string>
+	<key>ADMOB_APP_ID</key>
+	<string>ca-app-pub-1840155123494215~7266709520</string>
+</dict>
+</plist>
