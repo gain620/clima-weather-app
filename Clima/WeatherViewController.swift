@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import Alamofire
 import SwiftyJSON
+import GoogleMobileAds
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate {
     
@@ -22,6 +23,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     let locationManager = CLLocationManager()
     let weatherDataModel = WeatherDataModel()
     
+    @IBOutlet weak var bannerView: GADBannerView!
     @IBOutlet weak var weatherIcon: UIImageView!
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var temperatureLabel: UILabel!
@@ -29,11 +31,18 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // set bannerView
+        bannerView.adUnitID = valueForAPIKey(named: "GOOGLE_AD_TEST_AD_UNIT")
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        print(APP_ID)
+        
+        //print(APP_ID)
     }
     
     func getWeatherData(url: String, parameters: [String : String]) {

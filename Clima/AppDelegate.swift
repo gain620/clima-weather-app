@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // initialize firebase
+        FirebaseApp.configure()
+        
+        // initialize admob
+        let ADMOB_APP_ID = valueForAPIKey(named: "GOOGLE_ADMOB_APP_ID")
+        GADMobileAds.configure(withApplicationID: ADMOB_APP_ID)
+        
         return true
     }
 
